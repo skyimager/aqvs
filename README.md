@@ -58,7 +58,7 @@ the `data` folder is not a part of this git project as it is confidential. Pleas
 ## 3. Project Execution Summary
 Steps in brief that were taken to carry out this project:
 
- **Step 1:**  Manual examination of the data shared. In the Manual examination we found that few images were misclassified, like IMG20180905145901.jpg is in defects category but I could find any defect on the product.
+ **Step 1:**  Manual examination of the data shared. In the Manual examination we found that few images were misclassified, like IMG20180905145901.jpg is in defects category but I could not find any defect on the product.
 
 <div style="text-align: center"><img src="results/IMG20180905145901.jpg" width="300"/></div>
 
@@ -72,7 +72,7 @@ Steps in brief that were taken to carry out this project:
 
  **Step 3:**  Annotating the defective parts for localising crack and wrinkle as the two defect types. This is done using the tool labelImg. The software is open-source and can be found [here](https://github.com/tzutalin/labelImg)
 
- **Step 4:**  Converting the xmls obtained from labelImg into csvs as required by the object detection training code. This is done using the script [here](./src/utils/xml_to_csv.py)
+ **Step 4:**  Converting the xmls obtained from labelImg into csvs as required by the object detection training code. This is done using the script [here](./src/utils/xml_to_csvs.py)
 
  **Step 5:**  Training the annotated data on yolov2. This is demonstrated in a Jupyter-Notebook [here](./notebooks/training_yolov2.ipynb)
 
@@ -82,7 +82,7 @@ Steps in brief that were taken to carry out this project:
 
  **Step 8:**  Checking inference statistics on the retinanet tranined model. This is demonstrated in the notebook [here](./notebooks/inference_retinanet.ipynb)
 
- **Step 9:**  Writing the mobile deployment code. This is via the script [here](./app/app.py)
+ **Step 9:**  Writing the mobile deployment code. This is done via the script [here](./app/app.py)
 
 
 <a name="proj-des"></a>
@@ -95,8 +95,6 @@ Support for `parallel processing` at CPU level for datapreparation and subsequen
 
 Explore `config.py` to learn more about the parameters you can tweak.
 
-A Notebook has been created for explaining the different training steps: <br>
-Jupyter-notebook [LINK](./notebook/training.ipynb)
 
 For training, make the desired configuration in `config.py` and then run `train.py` as:
 
