@@ -12,11 +12,13 @@ Automated Quality Verification System
 
 <a name="proj-obj"></a>
 ## 1. Project Objective
-The objective of this project is to develop an API call to detect defects in automobile parts. The API is targeted to serve as an Automatic Quality Verification System on shop floors.
+The objective of this project is to develop an API call to detect defects in automobile parts. The API is targeted to serve as an `Automatic Quality Verification System` on shop floors.
 
 The developed model can detect and localise multiple defect types in the presented automobile part. If defects are found in the part, a bounding box is drawn around the defect area along with the defect label and model confidence.
 
 This repository was created with the intention of making a common platform for object_detection that would allow plug and play for different architectures like Yolo, retinanet, Mask-RCNN etc. Such a platform would make future iterations with different object types faster, making it easier for others to implement their ideas.
+
+To start building the common framework, Yolov2 and Retinanet were considered.
 
 In the present state the yolov2 training codes are kept in `src2` folder and retinanet training codes are kept in `src` folder. Due to time constraints the two modules could not be combined for now and will be done in the near future.
 
@@ -54,21 +56,33 @@ the `data` folder is not a part of this git project as it is confidential. Pleas
 
 <a name="proj-sum"></a>
 ## 3. Project Execution Summary
- - Manual examination of the data shared.
+Steps in brief that were taken to carry out this project:
 
- - EDA on the data to further understand the data. Here I was trying to check if traditional image processing can yield results in this case. The observations have been elaborated in a later section.
+ **Step 1:**  Manual examination of the data shared. In the Manual examination we found that few images were misclassified, like IMG20180905145901.jpg is in defects category but I could find any defect on the product.
 
- - Annotating the defective parts for localising crack and wrinkle as the two defect types. This is done using the tool labelImg. The software is open-source and can be found [here](https://github.com/tzutalin/labelImg)
+<div style="text-align: center"><img src="results/IMG20180905145901.jpg" width="300"/></div>
 
- - Converting the xmls obtained from labelImg into csvs as required by the object detection training code. This is done using the script [here](./src/utils/xml_to_csv.py)
+ Similarly IMG20180905151135.jpg has signs of wrinkle in it, but was tagged as healthy.
 
- - Training the annotated data on yolov2. This is demonstrated in a Jupyter-Notebook [here](./notebooks/training_yolov2.ipynb)
+<div style="text-align: center"><img src="results/IMG20180905151135.jpg" width="300"/></div>
 
- - Checking inference statistics on the yolov2 tranined model. This is demonstrated in the notebook [here](./notebooks/inference_yolov2.ipynb)
+ Such mixed instances made the manual annotation of the data time consuming.
 
- - Training the annotated data on retinanet. This is demonstrated in the notebook [here](./notebooks/training_retinanet.ipynb)
+ **Step 2:** EDA on the data to further understand the data. Here I was trying to check if traditional image processing can yield results in this case. The results have been shown in a Jupyter-Notebook [here](./notebooks/EDA.ipynb)
 
- - Checking inference statistics on the retinanet tranined model. This is demonstrated in the notebook [here](./notebooks/inference_retinanet.ipynb)
+ **Step 3:**  Annotating the defective parts for localising crack and wrinkle as the two defect types. This is done using the tool labelImg. The software is open-source and can be found [here](https://github.com/tzutalin/labelImg)
+
+ **Step 4:**  Converting the xmls obtained from labelImg into csvs as required by the object detection training code. This is done using the script [here](./src/utils/xml_to_csv.py)
+
+ **Step 5:**  Training the annotated data on yolov2. This is demonstrated in a Jupyter-Notebook [here](./notebooks/training_yolov2.ipynb)
+
+ **Step 6:**  Checking inference statistics on the yolov2 tranined model. This is demonstrated in the notebook [here](./notebooks/inference_yolov2.ipynb)
+
+ **Step 7:**  Training the annotated data on retinanet. This is demonstrated in the notebook [here](./notebooks/training_retinanet.ipynb)
+
+ **Step 8:**  Checking inference statistics on the retinanet tranined model. This is demonstrated in the notebook [here](./notebooks/inference_retinanet.ipynb)
+
+ **Step 9:**  Writing the mobile deployment code. This is via the script [here](./app/app.py)
 
 
 <a name="proj-des"></a>
