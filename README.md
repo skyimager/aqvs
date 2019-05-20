@@ -97,12 +97,11 @@ Before jumping into deep learning, it is important to examine traditional image 
 I tried preliminary segmenting the desired part from the background, using thresholding techniques.
 
 Defective Part:
-<left><img src="results/defect_eda.png" width="300"/></left>
+<div style="text-align: left"><img src="results/defect_eda.png" width="300"/></div>
 <br>
 
-
 Otsu Thresholded:
-<left><img src="results/otsu_eda.png" width="300"/></left>
+<div style="text-align: left"><img src="results/otsu_eda.png" width="300"/></div>
 <br>
 
 HSV Split:
