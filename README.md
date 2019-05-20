@@ -97,11 +97,11 @@ Before jumping into deep learning, it is important to examine traditional image 
 I tried preliminary segmenting the desired part from the background, using thresholding techniques.
 
 Defective Part:
-<div style="text-align: left"><img src="results/defect_eda.png" width="300"/></div>
+<div style="text-align: left"><img src="results/defect_eda.png" width="500"/></div>
 <br>
 
 Otsu Thresholded:
-<div style="text-align: left"><img src="results/otsu_eda.png" width="300"/></div>
+<div style="text-align: left"><img src="results/otsu_eda.png" width="500"/></div>
 <br>
 
 HSV Split:
@@ -120,17 +120,17 @@ The Yolov2 model gave several false detections and so it was not considered for 
 
 On the contrary, the retinanet model gave results with 13 epochs and 100 steps per epoch for training.
 
-<div style="text-align: left"><img src="results/defect2.png" width="300"/></div>
+<div style="text-align: left"><img src="results/defect2.png" width="400"/></div>
 <br>
 
 <div style="text-align: left"><img src="results/defect3.png" width="300"/></div>
 <br>
 
-<div style="text-align: left"><img src="results/defect6.png" width="300"/></div>
+<div style="text-align: left"><img src="results/defect6.png" width="400"/></div>
 <br>
 
 There were few erorr cases observed as below:
-<div style="text-align: left"><img src="results/error.png" width="300"/></div>
+<div style="text-align: left"><img src="results/error.png" width="400"/></div>
 However, the error cases had low confidence.
 
 <a name="to-do"></a>
