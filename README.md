@@ -105,11 +105,11 @@ Otsu Thresholded:
 <br>
 
 HSV Split:
-<div style="text-align: left"><img src="results/hsv_eda.png" width="300"/></div>
+<div style="text-align: left"><img src="results/hsv_eda.png" width="500"/></div>
 <br>
 
 Saturation channel thresholding:
-<div style="text-align: left"><img src="results/thres_defect.png" width="300"/></div>
+<div style="text-align: left"><img src="results/thres_defect.png" width="500"/></div>
 <br>
 
 Although Saturation channel thresholding seemed to perform well on almost 95% of the data, it was failing in edge cases. Due to time constraints I did not work on this further, and so the idea of employing traditional image processing was dropped.
